@@ -9,6 +9,11 @@ get '/' => sub {
   $c->render(template => 'index');
 };
 
+get '/kaiten' => sub {
+  my $c = shift;
+  $c->render(template => 'index');
+};
+
 app->start;
 __DATA__
 
