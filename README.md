@@ -32,7 +32,7 @@ PerlのWAFである 'Mojolicious'を使ったアプリケーションです。
 
 ## Licence
 
-### Script
+### Script(myapp.pl)
 [Artistic License 2.0](https://www.perlfoundation.org/artistic-license-20.html)
 
 ### Picture(sushi_ootoro.png)
