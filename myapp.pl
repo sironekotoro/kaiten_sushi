@@ -9,11 +9,13 @@ my $angle = 0;
 
 get '/' => sub {
   my $c = shift;
+  $c->stash(kakudo => $angle);
   $c->render(template => 'index');
 };
 
 get '/kaiten' => sub {
   my $c = shift;
+  $c->stash(kakudo => $angle);
   $c->render(template => 'index');
 };
 
@@ -34,7 +36,7 @@ __DATA__
 <hr>
 
 <h2>デバッグ</h2>
-<p>現在の角度：</p>
+<p>現在の角度：<%= $kakudo %></p>
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
