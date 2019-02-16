@@ -9,11 +9,17 @@ my $angle = 0;
 
 get '/' => sub {
   my $c = shift;
+  # コントローラ部のスカラー変数 $angle を
+  # テンプレート部のスカラー変数 $kakudo に
+  # stashを使って渡す
+  $c->stash(kakudo => $angle);
   $c->render(template => 'index');
 };
 
 get '/kaiten' => sub {
   my $c = shift;
+  # 上部の / と同じ処理
+  $c->stash(kakudo => $angle);
   $c->render(template => 'index');
 };
 
@@ -34,7 +40,12 @@ __DATA__
 <hr>
 
 <h2>デバッグ</h2>
-<p>現在の角度：</p>
+<!--
+ビュー部はHTMLなのでコメントもHTML形式のものを使う
+コントローラ部で設定し、引き渡された変数 $kakudo を
+表示する
+-->
+<p>現在の角度：<%= $kakudo %></p>
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
