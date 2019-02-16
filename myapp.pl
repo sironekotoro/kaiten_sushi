@@ -17,6 +17,8 @@ __DATA__
 % title 'Welcome';
 <h1>寿司を回す</h1>
 
+<img src='sushi_ootoro.png' alt='いらすとやさんの大トロ寿司！' />
+
 @@ layouts/default.html.ep
 <!DOCTYPE html>
 <html>
