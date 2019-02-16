@@ -8,39 +8,40 @@ plugin 'PODRenderer';
 my $angle = 0;
 
 get '/' => sub {
-  my $c = shift;
-  # コントローラ部のスカラー変数 $angle を
-  # テンプレート部のスカラー変数 $kakudo に
-  # stashを使って渡す
-  $c->stash(kakudo => $angle);
-  $c->render(template => 'index');
+    my $c = shift;
+
+    # コントローラ部のスカラー変数 $angle を
+    # テンプレート部のスカラー変数 $kakudo に
+    # stashを使って渡す
+    $c->stash( kakudo => $angle );
+    $c->render( template => 'index' );
 };
 
 get '/kaiten' => sub {
-  my $c = shift;
+    my $c = shift;
 
-  # /kaiten にアクセスする都度、回転角度を30度増やす
-  $angle = $angle + 30;
+    # /kaiten にアクセスする都度、回転角度を30度増やす
+    $angle = $angle + 30;
 
-  # 360度以上の数字になった場合の処理を追加
-  $angle = under_360($angle);
+    # 360度以上の数字になった場合の処理を追加
+    $angle = under_360($angle);
 
-  # 上部の / と同じ処理
-  $c->stash(kakudo => $angle);
+    # 上部の / と同じ処理
+    $c->stash( kakudo => $angle );
 
-  # リダイレクトされるように設定
-  $c->redirect_to('/');
+    # リダイレクトされるように設定
+    $c->redirect_to('/');
 };
 
 # 360以上の数字だったら360を引いて返すサブルーチン
 sub under_360 {
-  my $angle = shift;
+    my $angle = shift;
     if ( $angle < 360 ) {
-      return $angle;
+        return $angle;
     }
     else {
-      $angle = $angle - 360;
-      return $angle;
+        $angle = $angle - 360;
+        return $angle;
     }
 }
 
