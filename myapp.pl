@@ -31,6 +31,11 @@ __DATA__
   <button type="submit">回す！</button>
 </form>
 
+<hr>
+
+<h2>デバッグ</h2>
+<p>現在の角度：</p>
+
 @@ layouts/default.html.ep
 <!DOCTYPE html>
 <html>
