@@ -19,7 +19,7 @@ __DATA__
 
 <img src='sushi_ootoro.png' alt='いらすとやさんの大トロ寿司！' />
 
-<form>
+<form action="/kaiten">
   <button type="submit">回す！</button>
 </form>
 
