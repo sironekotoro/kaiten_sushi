@@ -5,7 +5,7 @@ use Mojolicious::Lite;
 plugin 'PODRenderer';
 
 # 寿司を回転させる角度を保存するスカラー変数
-$angle = 0;
+my $angle = 0;
 
 get '/' => sub {
   my $c = shift;
