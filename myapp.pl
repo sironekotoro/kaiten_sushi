@@ -15,9 +15,7 @@ __DATA__
 @@ index.html.ep
 % layout 'default';
 % title 'Welcome';
-<h1>Welcome to the Mojolicious real-time web framework!</h1>
-To learn more, you can browse through the documentation
-<%= link_to 'here' => '/perldoc' %>.
+<h1>寿司を回す</h1>
 
 @@ layouts/default.html.ep
 <!DOCTYPE html>
