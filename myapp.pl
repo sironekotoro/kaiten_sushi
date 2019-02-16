@@ -22,10 +22,25 @@ get '/kaiten' => sub {
   # /kaiten にアクセスする都度、回転角度を30度増やす
   $angle = $angle + 30;
 
+  # 360度以上の数字になった場合の処理を追加
+  $angle = under_360($angle);
+
   # 上部の / と同じ処理
   $c->stash(kakudo => $angle);
   $c->render(template => 'index');
 };
+
+# 360以上の数字だったら360を引いて返すサブルーチン
+sub under_360 {
+  my $angle = shift;
+    if ( $angle < 360 ) {
+      return $angle;
+    }
+    else {
+      $angle = $angle - 360;
+      return $angle;
+    }
+}
 
 app->start;
 __DATA__
