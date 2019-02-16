@@ -19,6 +19,10 @@ __DATA__
 
 <img src='sushi_ootoro.png' alt='いらすとやさんの大トロ寿司！' />
 
+<form>
+  <button type="submit">回す！</button>
+</form>
+
 @@ layouts/default.html.ep
 <!DOCTYPE html>
 <html>
