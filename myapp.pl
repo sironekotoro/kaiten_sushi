@@ -4,6 +4,9 @@ use Mojolicious::Lite;
 # Documentation browser under "/perldoc"
 plugin 'PODRenderer';
 
+# 寿司を回転させる角度を保存するスカラー変数
+$angle = 0;
+
 get '/' => sub {
   my $c = shift;
   $c->render(template => 'index');
