@@ -18,6 +18,10 @@ get '/' => sub {
 
 get '/kaiten' => sub {
   my $c = shift;
+
+  # /kaiten にアクセスする都度、回転角度を30度増やす
+  $angle = $angle + 30;
+
   # 上部の / と同じ処理
   $c->stash(kakudo => $angle);
   $c->render(template => 'index');
