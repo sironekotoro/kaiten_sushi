@@ -27,7 +27,9 @@ get '/kaiten' => sub {
 
   # 上部の / と同じ処理
   $c->stash(kakudo => $angle);
-  $c->render(template => 'index');
+
+  # リダイレクトされるように設定
+  $c->redirect_to('/');
 };
 
 # 360以上の数字だったら360を引いて返すサブルーチン
