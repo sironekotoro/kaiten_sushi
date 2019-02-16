@@ -35,7 +35,8 @@ __DATA__
 % title 'Welcome';
 <h1>寿司を回す</h1>
 
-<img src='sushi_ootoro.png' alt='いらすとやさんの大トロ寿司！' />
+<!-- タグの表示を制御するスタイルシートを直接設定しています -->
+<img src='sushi_ootoro.png' alt='いらすとやさんの大トロ寿司！' style="transform:rotate(<%= $kakudo %>deg);" />
 
 <form action="/kaiten">
   <button type="submit">回す！</button>
